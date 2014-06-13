@@ -14,7 +14,9 @@ class AccessCredentialRepository extends EntityRepository
 {
     public function authenticate($username, $password) {
         try {
-            $qb = $this->_em->createQueryBuilder('c')
+            $qb = $this->_em->createQueryBuilder();
+            $qb->select('c')
+                ->from('Application\\Entity\\AccessCredential', 'c')
                 ->where('c.username = :username')
                 ->andWhere('c.password = :password')
                 ->andWhere('c.status = :status')

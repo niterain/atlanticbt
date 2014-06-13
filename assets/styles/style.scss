@@ -16,6 +16,44 @@
   }
 }
 
+.error {
+  text-align: center;
+  font-size: 24px;
+  color: red;
+}
+
+.table {
+  display: table;
+  width: 100%;
+}
+
+.tableRow {
+  display: table-row;
+}
+
+.headerCell {
+  background-color: #b0b0b0;
+}
+
+.cellWidth {
+  display: table-cell;
+  width: 200px;
+}
+
+.cell {
+  display: table-cell;
+  padding: 3px 10px 3px 10px;
+  min-width: 100px;
+}
+
+.odd {
+  background-color: #dfdfdf;
+}
+
+.even {
+  background-color: #ffffff;
+}
+
 header {
   background: none;
 }

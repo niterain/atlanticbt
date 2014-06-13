@@ -3,7 +3,8 @@
 namespace Application\Repository;
 
 use Doctrine\ORM\EntityRepository;
-
+use Doctrine\ORM\Query\Expr\Join;
+use Doctrine\Common\Util\Debug;
 /**
  * ProfileRepository
  *

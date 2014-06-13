@@ -1,9 +1,26 @@
-<div>
-    <div class="first-name"></div>
-    <div class="last-name"></div>
-    <div class="address-line"></div>
-    <div class="city"></div>
-    <div class="state"></div>
-    <div class="postal-code"></div>
-    <div class="status"></div>
+
+<div class="table">
+    <div class="row cellHeader">
+        <div class="cell first-name">First Name</div>
+        <div class="cell last-name">Last Name</div>
+        <div class="cellWidth address-line">Address</div>
+        <div class="cell city">City</div>
+        <div class="cell state">State</div>
+        <div class="cell postal-code">Postal Code</div>
+        <div class="cell status">Status</div>
+    </div>
+<?php for ($x = 0; $x < count($this->response['list']); $x++) {
+        $profile = $this->response['list'][$x];
+        $address = $this->response['list'][++$x];
+?>
+    <div class="row <?php print ($x % 2) ? 'even' : 'odd'; ?>">
+        <div class="cell first-name"><?php print $profile->getFirstName(); ?></div>
+        <div class="cell last-name"><?php print $profile->getLastName(); ?></div>
+        <div class="cellWidth address-line"><?php print (!empty($address)) ? $address->getAddressLine() : ''; ?></div>
+        <div class="cell city"><?php print (!empty($address)) ? $address->getCity() : ''; ?></div>
+        <div class="cell state"><?php print (!empty($address)) ? $address->getState() : ''; ?></div>
+        <div class="cell postal-code"><?php print (!empty($address)) ? $address->getPostalCode() : ''; ?></div>
+        <div class="cell status"><?php print $profile->getStatus(); ?></div>
+    </div>
+<?php } ?>
 </div>

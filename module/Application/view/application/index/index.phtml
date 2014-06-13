@@ -9,15 +9,14 @@
 
 <div class="clear"></div>
 
-<?php if (!empty($this->response->status) && $this->response->status == 'error') { ?>
-    <div class="error"><?php print $this->response->message; ?></div>
-<?php } ?>
 
 <div id="main" role="main">
 
+    <?php if (!empty($this->response['status']) && $this->response['status'] == 'error') { ?>
+        <div class="error"><?php print $this->response['message']; ?></div>
+    <?php } ?>
 
     <div id="loginBox">
-
         <div class="shadowBottom"></div>
         <div class="shadowLeft"></div>
 
