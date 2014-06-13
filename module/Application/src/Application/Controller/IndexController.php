@@ -26,12 +26,12 @@ class IndexController extends EntityManagerActionController
                 // We can now authenticate
 
                 // TODO: Should be an AuthService
-                $user = $this->getEntityManager()->getRepository('Entity\\AccessCredential')->authenticate($username, $password);
+                $user = $this->getEntityManager()->getRepository('Application\\Entity\\AccessCredential')->authenticate($username, $password);
 
                 if ($user) {
                     // We found a valid user, now we can send it off to it's destination
                     $session = new Container('user');
-                    $session->authorized = true;
+                    $session->isAuthorized = true;
                     $session->userId = $user->getId();
                     $session->username = $user->getUsername();
 
@@ -49,6 +49,6 @@ class IndexController extends EntityManagerActionController
                 'message' => 'Username or password was invalid.'
             );
         }
-        return new ViewModel($response);
+        return new ViewModel(array('response' => $response));
     }
 }

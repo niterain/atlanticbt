@@ -12,4 +12,25 @@ use Doctrine\ORM\EntityRepository;
  */
 class ProfileRepository extends EntityRepository
 {
+    public function getInformation() {
+        try {
+
+            $qb = $this->_em->createQueryBuilder();
+
+            $qb->select('p, a')
+                ->from('Application\\Entity\\Profile', 'p')
+                ->leftJoin('Application\\Entity\\Address', 'a', Join::WITH, $qb->expr()->andX($qb->expr()->eq('p.addressId', 'a.id'),
+                    $qb->expr()->eq('p.status', ':status'), $qb->expr()->eq('a.status', ':status')))
+                ->setParameters(array('status' => 'active'));
+
+            $results = $qb->getQuery()->execute();
+
+            if (!empty($results)) {
+                return $results;
+            }
+        } catch (\Exception $e) {
+            //TODO: Log
+        }
+        return null;
+    }
 }

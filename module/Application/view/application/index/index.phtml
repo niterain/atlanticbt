@@ -9,8 +9,8 @@
 
 <div class="clear"></div>
 
-<?php if ($status == 'error') { ?>
-    Error
+<?php if (!empty($this->response->status) && $this->response->status == 'error') { ?>
+    <div class="error"><?php print $this->response->message; ?></div>
 <?php } ?>
 
 <div id="main" role="main">
