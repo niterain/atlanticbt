@@ -1,0 +1,15 @@
+{
+    "name": "tht",
+    "version": "2.0.0",
+    "devDependencies": {
+        "grunt": "*",
+        "grunt-contrib-watch": "*",
+        "grunt-contrib-jshint": "*",
+        "grunt-contrib-uglify": "*",
+        "grunt-contrib-qunit": "*",
+        "grunt-contrib-compass": "*",
+        "grunt-phpunit": "*",
+        "grunt-contrib-concat": "*",
+        "grunt-contrib-sass": "*"
+    }
+}
