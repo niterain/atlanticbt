@@ -31,6 +31,7 @@
 .table {
     display: table;
     width: 100%;
+    margin: 50px 0px 50px;
 }
 
 .tableRow {
@@ -39,23 +40,27 @@
 
 .headerCell {
     background-color: #b0b0b0;
+    border: 1px solid #efefef;
 }
 .cellWidth {
     display: table-cell;
-    width: 200px;
+    min-width: 200px;
+    border: 1px solid #efefef;
 }
 
 .cell {
     display: table-cell;
     padding: 3px 10px 3px 10px;
     min-width: 100px;
+    border: 1px solid #efefef;
 }
+
 .odd {
-    background-color: #dfdfdf;
+    background-color: #efefef;
 }
 
 .even {
-    background-color: #ffffff;
+    background-color: #fff;
 }
 
 header {

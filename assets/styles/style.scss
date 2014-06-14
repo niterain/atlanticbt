@@ -37,7 +37,8 @@
 
 .cellWidth {
   display: table-cell;
-  width: 200px;
+  word-wrap: break-word;
+  width: 100px;
 }
 
 .cell {
